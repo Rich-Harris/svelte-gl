@@ -84,8 +84,9 @@ Err, TODO. A couple of high level thoughts though.
 
 Firstly, the job is easier in some respects than Svelte's DOM manipulation — rather than surgically updating parts of the document, in WebGL land we just re-render the entire world on any state change.
 
-But the flip side is that it's probably not enough to just convert each element in the graph into a draw call; we probably need to do more work up-front to figure out there are no constraint violations (e.g. in the example above, we need to ensure that `#my-box` refers to an element that currently exists, and figure out its position so that it can be set as the target of the camera and the light).
+But the flip side is that it's probably not enough to just convert each element in the graph into a draw call; we probably need to do more work up-front to figure out there are no constraint violations (e.g. in the example above, we need to ensure that `#my-box` refers to an element that currently exists, and figure out its position so that it can be set as the target of the camera and the light. Though maybe it should be `target={boxPos}` anyway).
 
+By far the easiest way to get started — and probably the most sensible, long-term — would be to add a new compiler target within Svelte itself. That way we wouldn't need to reimplement a bunch of stuff, and the two projects would stay in sync. The danger is that the experiment doesn't pan out, and Svelte is left with a vestigial appendage, so it would require buy-in from the Svelte community. The alternative would be to extract the different compiler targets out from Svelte into separate packages (`@sveltejs/compile-dom`, `@sveltejs/compile-ssr`, `@sveltejs/compile-gl`) that the core calls out to. I haven't looked into how feasible that would be.
 
 ## Misc thoughts
 
