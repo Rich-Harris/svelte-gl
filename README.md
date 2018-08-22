@@ -55,6 +55,28 @@ scene.set({
 
 We could adopt large chunks of the Svelte component API, for handling local state, lifecycle hooks and the like.
 
+## Interop with Svelte components
+
+It would be pretty great if we could do this sort of thing:
+
+```html
+<h1>this is a svelte-gl component</h1>
+
+<canvas>
+  <MyScene {color}/>
+</canvas>
+
+<input type=color bind:color/>
+
+<script>
+   export default {
+      components: {
+         MyScene: './MyScene.gl.htmlx'
+      }
+   }
+</script>
+```
+
 
 ## Implementation
 
