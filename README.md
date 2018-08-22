@@ -73,3 +73,6 @@ But the flip side is that it's probably not enough to just convert each element 
 * What does asset loading look like in this scenario?
 * How can we bind to events etc? What do they look like?
 * How can we make things interactive? How can we get WebGL coords (e.g. some vertex, to which we want to add a DOM tooltip) into screen coords?
+* WebGL 1 or 2? Or is that a compiler target?
+* Would be cool to use OffscreenCanvas where possible
+* Physics. In the same way that Svelte only includes the bits of the framework you're using, svelte-gl could have dependencies on things like http://nphysics.org/ that are only imported if the scene has physics. Incorporating physics would make top-down state updates... interesting
