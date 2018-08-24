@@ -99,3 +99,4 @@ By far the easiest way to get started — and probably the most sensible, long-t
 * WebGL 1 or 2? Or is that a compiler target?
 * Would be cool to use OffscreenCanvas where possible
 * Physics. In the same way that Svelte only includes the bits of the framework you're using, svelte-gl could have dependencies on things like http://nphysics.org/ that are only imported if the scene has physics. Incorporating physics would make top-down state updates... interesting
+* This might be taking things too far, but... if we're a compiler, then maybe we can do stuff like precompute global illumination maps? That way we wouldn't need things like SSAO post-processors (for static scenes at least), and the results would be higher quality. It'd be extremely difficult, but difficult is better than impossible (which is the case for all existing WebGL frameworks, AFAIK)
